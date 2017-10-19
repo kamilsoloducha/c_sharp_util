@@ -54,6 +54,12 @@
     <Compile Include="Serializers\XmlSerializer.cs" />
     <Compile Include="Tasks\TaskQueue.cs" />
     <Compile Include="Tasks\ITask.cs" />
+    <Compile Include="Threads\AbortableBackgroundWorker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Threads\BackgroundWorkQueue.cs" />
+    <Compile Include="Threads\IWork.cs" />
+    <Compile Include="Threads\IWorkQueue.cs" />
     <Compile Include="Timer.cs" />
   </ItemGroup>
   <ItemGroup />
