@@ -22,7 +22,7 @@ namespace Util.Threads
             Worker.DoWork += worker_DoWork;
         }
 
-        protected void worker_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        protected virtual void worker_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
         {
             while(MainList.Count > 0)
             {
@@ -48,13 +48,13 @@ namespace Util.Threads
             }
         }
 
-        public void Abort()
+        public virtual void Abort()
         {
             Worker.Abort();
             RunOnCanceled();
         }
 
-        public void Execute()
+        public virtual void Execute()
         {
             Worker.RunWorkerAsync();
         }

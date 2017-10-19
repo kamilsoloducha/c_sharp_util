@@ -60,6 +60,8 @@
     <Compile Include="Threads\BackgroundWorkQueue.cs" />
     <Compile Include="Threads\IWork.cs" />
     <Compile Include="Threads\IWorkQueue.cs" />
+    <Compile Include="Threads\SimpleAsyncWork.cs" />
+    <Compile Include="Threads\SimpleWork.cs" />
     <Compile Include="Timer.cs" />
   </ItemGroup>
   <ItemGroup />

@@ -9,7 +9,7 @@ using System.Xml.Serialization;
 
 namespace Util.Serializers
 {
-    public class XmlSerializer<T> : ISerializer<T> where T : new()
+    public class XmlSerializer<T> : ISerializer<T>
     {
 
         public string Path { get; set; }
