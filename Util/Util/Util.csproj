@@ -40,6 +40,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BuilderCommand.cs" />
@@ -57,7 +58,9 @@
     <Compile Include="Threads\AbortableBackgroundWorker.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Threads\BackgroundQueueWithProgressDialog.cs" />
     <Compile Include="Threads\BackgroundWorkQueue.cs" />
+    <Compile Include="Threads\IProgressDialog.cs" />
     <Compile Include="Threads\IWork.cs" />
     <Compile Include="Threads\IWorkQueue.cs" />
     <Compile Include="Threads\SimpleAsyncWork.cs" />
