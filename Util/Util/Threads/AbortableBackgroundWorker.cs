@@ -26,6 +26,7 @@ namespace Util.Threads
         {
             if (_workerThread != null)
             {
+                System.Console.WriteLine("Abort thread");
                 _workerThread.Abort();
                 _workerThread = null;
             }

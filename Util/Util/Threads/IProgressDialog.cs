@@ -10,7 +10,10 @@ namespace Util.Threads
     {
 
         void Show();
+        Action OnShow { get; set; }
+
         void Close();
+        Action OnClose { get; set; }
 
     }
 }

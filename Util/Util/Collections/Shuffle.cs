@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Util.Collections
 {
-    public class Utils
+    public static class IListExtension
     {
-        public static IList<T> Shuffle<T>(IList<T> list)
+        public static IList<T> Shuffle<T>(this IList<T> list)
         {
             Random lRandom = new Random();
             int n = list.Count;

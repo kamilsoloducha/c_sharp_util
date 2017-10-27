@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.Windows;
 using Util.Threads;
 
@@ -6,6 +7,7 @@ namespace Wordki.Helpers
 {
     public class BackgroundQueueWithProgressDialog : BackgroundWorkQueue
     {
+        private bool _isRunning;
         public IProgressDialog Dialog { get; set; }
 
         public BackgroundQueueWithProgressDialog() : base()
@@ -14,6 +16,8 @@ namespace Wordki.Helpers
 
         public override void Execute()
         {
+            Dialog.OnClose = Abort;
+            _isRunning = true;
             base.Execute();
             Dialog.Show();
         }
@@ -26,8 +30,14 @@ namespace Wordki.Helpers
 
         public override void Abort()
         {
-            base.Abort();
-            Dialog.Close();
+            Console.WriteLine("Before abort");
+            if (_isRunning)
+            {
+                _isRunning = false;
+                base.Abort();
+                Console.WriteLine("Abort");
+                Dialog.Close();
+            }
         }
 
     }
