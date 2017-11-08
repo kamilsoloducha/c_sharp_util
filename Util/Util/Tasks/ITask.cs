@@ -4,13 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Util.Threads
+namespace Util.Tasks
 {
-    public interface IProgressDialog
+    public interface ITask
     {
 
-        void Show();
-        void Close();
+        bool Execute();
 
     }
 }
