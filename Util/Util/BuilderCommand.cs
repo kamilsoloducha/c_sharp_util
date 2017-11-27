@@ -4,17 +4,20 @@ namespace Util
 {
     public class BuilderCommand : System.Windows.Input.ICommand
     {
-        private Action<object> _action { get; }
-        private Predicate<object> _canExecute { get; }
+        private Action action { get; set; }
+        private Action<object> parametrizedAction { get; set; }
+        private Predicate<object> canExecute { get; set; }
 
-        public BuilderCommand(Action<object> action, Predicate<object> canExecute)
+        public BuilderCommand(Action<object> parametrizedAction, Predicate<object> canExecute = null)
         {
-            _action = action;
-            _canExecute = canExecute;
+            this.parametrizedAction = parametrizedAction;
+            this.canExecute = canExecute;
         }
 
-        public BuilderCommand(Action<object> action) : this(action, DefaultCanExecute)
+        public BuilderCommand(Action action, Predicate<object> canExecute = null)
         {
+            this.action = action;
+            this.canExecute = canExecute;
         }
 
         public event EventHandler CanExecuteChanged
@@ -25,20 +28,19 @@ namespace Util
 
         public bool CanExecute(object parameter)
         {
-            return _canExecute != null && _canExecute(parameter);
+            return canExecute != null && canExecute(parameter);
         }
 
         public void Execute(object parameter)
         {
-            if (_action != null)
+            if (parametrizedAction != null)
             {
-                _action(parameter);
+                parametrizedAction(parameter);
             }
-        }
-
-        private static bool DefaultCanExecute(object parameter)
-        {
-            return true;
+            else if (action != null)
+            {
+                action();
+            }
         }
     }
 }
