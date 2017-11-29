@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BuilderCommand.cs" />
+    <Compile Include="Collections\NavigationExtension.cs" />
     <Compile Include="Collections\ObservableDirectory.cs" />
     <Compile Include="Collections\Shuffle.cs" />
     <Compile Include="MD5Hash.cs" />

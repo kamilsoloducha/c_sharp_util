@@ -28,7 +28,7 @@ namespace Util
 
         public bool CanExecute(object parameter)
         {
-            return canExecute != null && canExecute(parameter);
+            return canExecute == null ? true : canExecute(parameter);
         }
 
         public void Execute(object parameter)
