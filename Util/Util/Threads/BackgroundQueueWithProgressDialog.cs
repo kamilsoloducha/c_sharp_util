@@ -1,8 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Windows;
-using Util.Threads;
 
-namespace Wordki.Helpers
+namespace Util.Threads
 {
     public class BackgroundQueueWithProgressDialog : BackgroundWorkQueue
     {
