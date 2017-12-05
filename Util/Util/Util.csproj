@@ -48,6 +48,7 @@
     <Compile Include="Collections\NavigationExtension.cs" />
     <Compile Include="Collections\ObservableDirectory.cs" />
     <Compile Include="Collections\Shuffle.cs" />
+    <Compile Include="GenereticSingleton.cs" />
     <Compile Include="MD5Hash.cs" />
     <Compile Include="PackageStore.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
